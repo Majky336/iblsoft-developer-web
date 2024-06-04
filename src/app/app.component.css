@@ -1,0 +1,14 @@
+.main {
+  margin: auto;
+  padding: 1rem;
+  max-width: 120ch;
+  font-family: "Nunito Variable", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}

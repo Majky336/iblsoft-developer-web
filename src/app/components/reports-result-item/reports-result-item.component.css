@@ -1,0 +1,25 @@
+.report-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.report-item-type {
+  min-width: 10%;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  padding: 0.5rem;
+}
+
+.report-item-time {
+  min-width: 20%;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  padding: 0.5rem;
+}
+
+.report-item-text {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+

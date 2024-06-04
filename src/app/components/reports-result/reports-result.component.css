@@ -1,0 +1,25 @@
+.reports-container {
+  margin: 0.5rem 0;
+}
+
+.report {
+  border: 1px solid #333;
+}
+
+.report-id {
+  background: #999;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.no-results, .loading, .error {
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.error {
+  color: red;
+}

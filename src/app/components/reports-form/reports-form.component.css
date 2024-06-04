@@ -1,0 +1,56 @@
+.reports-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+.form-row > label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.05rem;
+}
+
+.form-row > input {
+  width: 50%;
+  padding: 0.25rem;
+  border-radius: 0;
+  outline: none;
+  border-width: 1px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.25rem;
+  padding: 0.25rem;
+}
+
+.reports-submit-button {
+  padding: 0.5rem;
+  background: #333;
+  color: #fff;
+  font-size: 1.05rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.error-row {
+  color: red;
+  font-size: 0.9rem;
+  margin: -0.5rem 0.25rem 0.5rem 0.25rem;
+  padding: 0.25rem;
+}
+
+button[disabled] {
+  background: #ccc;
+  cursor: not-allowed;
+}
