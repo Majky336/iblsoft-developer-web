@@ -3,22 +3,26 @@
     <label>Message types:</label>
     <div class="checkbox-group" formGroupName="messageTypes">
       <div>
-        <input type="checkbox" id="metar" formControlName="metar"/>
+        <input type="checkbox" id="metar" formControlName="metar" />
         <label for="metar">METAR</label>
       </div>
       <div>
-        <input type="checkbox" id="sigmet" formControlName="sigmet"/>
+        <input type="checkbox" id="sigmet" formControlName="sigmet" />
         <label for="sigmet">SIGMET</label>
       </div>
       <div>
-        <input type="checkbox" id="taf" formControlName="taf"/>
+        <input type="checkbox" id="taf" formControlName="taf" />
         <label for="taf">TAF</label>
       </div>
     </div>
   </div>
 
   <div
-    *ngIf="reportsForm.touched && reportsForm.invalid && reportsForm.get('messageTypes')?.hasError('atLeastOneMessageType')"
+    *ngIf="
+      reportsForm.touched &&
+      reportsForm.invalid &&
+      reportsForm.get('messageTypes')?.hasError('atLeastOneMessageType')
+    "
     class="error-row"
     data-test-id="message-types-error"
   >
@@ -27,21 +31,32 @@
 
   <div class="form-row">
     <label>Airports:</label>
-    <input type="text" id="airports" formControlName="airports"/>
+    <input type="text" id="airports" formControlName="airports" />
   </div>
 
   <div class="form-row">
     <label>Countries:</label>
-    <input type="text" id="countries" formControlName="countries"/>
+    <input type="text" id="countries" formControlName="countries" />
   </div>
 
   <div
-    *ngIf="reportsForm.touched && reportsForm.invalid && reportsForm.hasError('airportsOrCountries')"
+    *ngIf="
+      reportsForm.touched &&
+      reportsForm.invalid &&
+      reportsForm.hasError('airportsOrCountries')
+    "
     class="error-row"
     data-test-id="airports-or-countries-error"
   >
     At least one airport or one country code is required.
   </div>
 
-  <button class="reports-submit-button" data-test-id="submit-button" type="submit" [disabled]="reportsForm.invalid">Create Briefing</button>
+  <button
+    class="reports-submit-button"
+    data-test-id="submit-button"
+    type="submit"
+    [disabled]="reportsForm.invalid"
+  >
+    Create Briefing
+  </button>
 </form>

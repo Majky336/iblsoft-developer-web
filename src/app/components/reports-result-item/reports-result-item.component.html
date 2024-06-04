@@ -1,5 +1,7 @@
 <div class="report-item">
   <div class="report-item-type">{{ report.queryType }}</div>
-  <div class="report-item-time">{{ report.reportTime | date:'dd.M.yyyy HH:mm:ss' }}</div>
+  <div class="report-item-time">
+    {{ report.reportTime | date : "dd.M.yyyy HH:mm:ss" }}
+  </div>
   <div class="report-item-text" [innerHtml]="report.text | highlight"></div>
 </div>

@@ -1,6 +1,6 @@
-import {ReportsResultItemComponent} from "./reports-result-item.component";
-import {ComponentFixture, TestBed} from "@angular/core/testing";
-import {Report} from "../../model/reports.model";
+import { ReportsResultItemComponent } from './reports-result-item.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Report } from '../../model/reports.model';
 
 describe('ReportsResultItemComponent', () => {
   let component: ReportsResultItemComponent;
@@ -8,7 +8,7 @@ describe('ReportsResultItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReportsResultItemComponent]
+      imports: [ReportsResultItemComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ReportsResultItemComponent);
@@ -25,9 +25,9 @@ describe('ReportsResultItemComponent', () => {
 
   it('should update report data when input is provided', () => {
     const mockReport: Report = {
-      queryType: "queryType",
-      reportTime: "2016-06-15T11:00:00Z",
-      text: "text"
+      queryType: 'queryType',
+      reportTime: '2016-06-15T11:00:00Z',
+      text: 'text',
     };
 
     component.report = mockReport;

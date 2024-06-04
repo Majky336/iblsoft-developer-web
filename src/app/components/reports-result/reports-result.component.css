@@ -13,7 +13,9 @@
   border-bottom: 1px solid #333;
 }
 
-.no-results, .loading, .error {
+.no-results,
+.loading,
+.error {
   font-size: 1.15rem;
   font-weight: bold;
   text-align: center;

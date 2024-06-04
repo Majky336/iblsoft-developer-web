@@ -1,2 +1,5 @@
 <app-reports-form (formSubmitted)="onFormSubmitted($event)"></app-reports-form>
-<app-reports-result [briefingData]="briefingData$ | async" [loading]="loading$ | async"></app-reports-result>
+<app-reports-result
+  [briefingData]="briefingData$ | async"
+  [loading]="loading$ | async"
+></app-reports-result>

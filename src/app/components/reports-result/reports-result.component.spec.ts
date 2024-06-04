@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReportsResultComponent } from './reports-result.component';
-import {ReportsResultItemComponent} from "../reports-result-item/reports-result-item.component";
-import {By} from "@angular/platform-browser";
+import { ReportsResultItemComponent } from '../reports-result-item/reports-result-item.component';
+import { By } from '@angular/platform-browser';
 
 describe('ReportsResultComponent', () => {
   let component: ReportsResultComponent;
@@ -10,9 +10,8 @@ describe('ReportsResultComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReportsResultItemComponent]
-    })
-    .compileComponents();
+      imports: [ReportsResultItemComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ReportsResultComponent);
     component = fixture.componentInstance;
@@ -26,11 +25,15 @@ describe('ReportsResultComponent', () => {
   it('should display no results when there are no results', () => {
     component.loading = false;
     component.briefingData = {
-      results: []
+      results: [],
     };
     fixture.detectChanges();
 
-    const noResultsMessage = fixture.debugElement.query(By.css('[data-test-id="no-results-label"]'));
-    expect(noResultsMessage.nativeElement.textContent).toContain('No results found');
+    const noResultsMessage = fixture.debugElement.query(
+      By.css('[data-test-id="no-results-label"]')
+    );
+    expect(noResultsMessage.nativeElement.textContent).toContain(
+      'No results found'
+    );
   });
 });

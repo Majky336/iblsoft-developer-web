@@ -1,12 +1,20 @@
 <ng-container *ngIf="!loading; else loadingTemplate">
   <ng-container *ngIf="briefingData; else noDataTemplate">
     <div class="error" *ngIf="briefingData.error">
-      <div data-test-id="result-error-message">{{ briefingData.error.message }}</div>
+      <div data-test-id="result-error-message">
+        {{ briefingData.error.message }}
+      </div>
     </div>
-    <div class="reports-container" *ngIf="briefingData.results.length > 0; else noDataTemplate">
+    <div
+      class="reports-container"
+      *ngIf="briefingData.results.length > 0; else noDataTemplate"
+    >
       <div class="report" *ngFor="let reportData of briefingData.results">
         <div class="report-id">{{ reportData.id }}</div>
-        <app-reports-result-item *ngFor="let report of reportData.reports" [report]="report"></app-reports-result-item>
+        <app-reports-result-item
+          *ngFor="let report of reportData.reports"
+          [report]="report"
+        ></app-reports-result-item>
       </div>
     </div>
   </ng-container>

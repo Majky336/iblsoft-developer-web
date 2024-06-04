@@ -3,41 +3,39 @@ import { Pipe, PipeTransform } from '@angular/core';
 enum HighlightColor {
   RED = 'red',
   BLUE = 'blue',
-  NONE = 'none'
+  NONE = 'none',
 }
 
 const HIGHLIGHT_PREFIX = 'text-highlight';
 
 @Pipe({
   name: 'highlight',
-  standalone: true
+  standalone: true,
 })
 export class HighlightPipe implements PipeTransform {
-
   transform(value: unknown, prefix: string[] = ['BKN', 'FEW', 'SCT']): unknown {
     if (typeof value !== 'string') {
       return value;
     }
 
-    const squeezedValue = value.replace(/\s+/g, ' ').trim()
+    const squeezedValue = value.replace(/\s+/g, ' ').trim();
     const splitValue = squeezedValue.split(' ');
 
     const highlightedValue = splitValue.map((word) => {
-      const prefixMatch = prefix.some((p) => word.startsWith(p))
+      const prefixMatch = prefix.some((p) => word.startsWith(p));
 
       if (prefixMatch) {
         const color = this.getColorForValue(word);
 
         if (color === HighlightColor.NONE) {
-          return word
+          return word;
         }
 
-        return `<span class="${HIGHLIGHT_PREFIX}-${color}">${word}</span>`
+        return `<span class="${HIGHLIGHT_PREFIX}-${color}">${word}</span>`;
       }
 
-      return word
-    })
-
+      return word;
+    });
 
     return highlightedValue.join(' ');
   }
@@ -56,5 +54,5 @@ export class HighlightPipe implements PipeTransform {
     }
 
     return HighlightColor.BLUE;
-  };
+  }
 }
